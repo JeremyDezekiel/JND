@@ -49,8 +49,8 @@ export default function Navbar() {
                     />
                 </div>
                 <div className="flex justify-end gap-5">
-                    <h1>Register</h1>
-                    <h1>Sign In</h1>
+                    <button className="bg-white hover:bg-gray-300 text-black font-semibold px-3 py-2">Register</button>
+                    <button className="hover:bg-white hover:text-black font-semibold px-3 py-2">Sign In</button>
                 </div>
             </div>
             <div className="flex justify-center border-b-2">
