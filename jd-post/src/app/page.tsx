@@ -1,5 +1,7 @@
 // import Image from "next/image";
 
+import { ChevronRight } from "lucide-react";
+
 export default function Home() {
   return (
     // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -98,68 +100,137 @@ export default function Home() {
     //   </footer>
     // </div>
     <div className="dark:text-white text-black">
-      <div className="border-b-2">
-        <div className="container mx-auto my-5 grid grid-cols-4 gap-5">
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-5 border-b-2">
-              <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/a483/live/4646bcc0-dd5e-11ef-8e2a-672c89b13e12.jpg.webp" alt="" />
-              <h3 className="font-bold text-xl">DeepSeek: How China's 'AI heroes' overcame US curbs to stun Silicon Valley</h3>
-              <p>How did a little-known Chinese start-up build a powerful new AI model despite restrictions?</p>
-              <div className="pb-2">
-                <span className="pe-5 border-e-2">18 hrs ago</span>
-                <span className="ps-5">Asia</span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-5 border-b-2">
-              <img src="https://ichef.bbci.co.uk/ace/standard/480/cpsprodpb/4fe8/live/993cea00-dd6b-11ef-bc01-8f2c83dad217.jpg.webp" alt="" />
-              <h3 className="font-bold text-xl">Bodies in streets as battle escalates in DR Congo city</h3>
-              <p>UN aid agencies are warning of a humanitarian crisis in Goma in the east of the Democratic Republic of Congo.</p>
-              <div className="pb-2">
-                <span className="pe-5 border-e-2">18 hrs ago</span>
-                <span className="ps-5">Asia</span>
-              </div>
+      <div className="container mx-auto py-5 grid grid-cols-4 gap-5 border-b-2">
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 border-b-2 group cursor-pointer">
+            <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/a483/live/4646bcc0-dd5e-11ef-8e2a-672c89b13e12.jpg.webp" alt="" />
+            <h3 className="font-bold text-xl group-hover:underline">DeepSeek: How China's 'AI heroes' overcame US curbs to stun Silicon Valley</h3>
+            <p>How did a little-known Chinese start-up build a powerful new AI model despite restrictions?</p>
+            <div className="pb-2">
+              <span className="pe-5 border-e-2">18 hrs ago</span>
+              <span className="ps-5">Asia</span>
             </div>
           </div>
-          <div className="col-span-2 flex flex-col gap-5">
-            <img className="w-full" src="https://ichef.bbci.co.uk/ace/standard/640/cpsprodpb/302e/live/95adcf10-dcd7-11ef-902e-cf9b84dc1357.jpg.webp" alt=""/>
-            <h1 className="font-bold text-4xl">Small rebound for Nvidia shares as US stock markets reopen after DeepSeek shock</h1>
-            <p>Shares for leading US chip firm Nvidia dropped by almost 17% on Monday after the emergence of DeepSeek stunned Silicon Valley.</p>
-          </div>
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-5 border-b-2">
-              <h1 className="font-bold text-xl">Abramovich dodged millions in tax with superyachts-for-hire scheme</h1>
-              <p>Shell companies were used to charter the sanctioned oligarch’s yachts to himself, evading VAT, BBC reveals.</p>
-              <div className="pb-2">
-                <span className="pe-5 border-e-2">11 hrs ago</span>
-                <span className="ps-5">World</span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-5 border-b-2">
-              <h1 className="font-bold text-xl">RFK Jr v Dr Oz and a looming battle over weight-loss drugs</h1>
-              <p>Experts say high demand for the drugs could force officials to make a decision on insurance coverage.</p>
-              <div className="pb-2">
-                <span className="pe-5 border-e-2">10 hrs ago</span>
-                <span className="ps-5">Health</span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-5 border-b-2">
-              <h1 className="font-bold text-xl">Decoding Melania Trump's new official portrait</h1>
-              <p>We asked two experts for their take on the image, which was shot in the White House a day after the inauguration.</p>
-              <div className="pb-2">
-                <span className="pe-5 border-e-2">13 hrs ago</span>
-                <span className="ps-5">US & Canada</span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-5 border-b-2">
-              <h1 className="font-bold text-xl">Abramovich dodged millions in tax with superyachts-for-hire scheme</h1>
-              <p>Shell companies were used to charter the sanctioned oligarch’s yachts to himself, evading VAT, BBC reveals.</p>
-              <div className="pb-2">
-                <span className="pe-5 border-e-2">5 hrs ago</span>
-                <span className="ps-5">US & Canada</span>
-              </div>
+          <div className="flex flex-col gap-5 group cursor-pointer">
+            <img src="https://ichef.bbci.co.uk/ace/standard/480/cpsprodpb/4fe8/live/993cea00-dd6b-11ef-bc01-8f2c83dad217.jpg.webp" alt="" />
+            <h3 className="font-bold text-xl group-hover:underline">Bodies in streets as battle escalates in DR Congo city</h3>
+            <p>UN aid agencies are warning of a humanitarian crisis in Goma in the east of the Democratic Republic of Congo.</p>
+            <div className="pb-2">
+              <span className="pe-5 border-e-2">18 hrs ago</span>
+              <span className="ps-5">Asia</span>
             </div>
           </div>
         </div>
+        <div className="col-span-2">
+          <div className="flex flex-col gap-5 group cursor-pointer">
+            <img className="w-full" src="https://ichef.bbci.co.uk/ace/standard/640/cpsprodpb/302e/live/95adcf10-dcd7-11ef-902e-cf9b84dc1357.jpg.webp" alt="" />
+            <h1 className="font-bold text-4xl group-hover:underline">Small rebound for Nvidia shares as US stock markets reopen after DeepSeek shock</h1>
+            <p>Shares for leading US chip firm Nvidia dropped by almost 17% on Monday after the emergence of DeepSeek stunned Silicon Valley.</p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 border-b-2 group cursor-pointer">
+            <h1 className="font-bold text-xl group-hover:underline">Abramovich dodged millions in tax with superyachts-for-hire scheme</h1>
+            <p>Shell companies were used to charter the sanctioned oligarch’s yachts to himself, evading VAT, BBC reveals.</p>
+            <div className="pb-2">
+              <span className="pe-5 border-e-2">11 hrs ago</span>
+              <span className="ps-5">World</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-5 border-b-2 group cursor-pointer">
+            <h1 className="font-bold text-xl group-hover:underline">RFK Jr v Dr Oz and a looming battle over weight-loss drugs</h1>
+            <p>Experts say high demand for the drugs could force officials to make a decision on insurance coverage.</p>
+            <div className="pb-2">
+              <span className="pe-5 border-e-2">10 hrs ago</span>
+              <span className="ps-5">Health</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-5 border-b-2 group cursor-pointer">
+            <h1 className="font-bold text-xl group-hover:underline">Decoding Melania Trump's new official portrait</h1>
+            <p>We asked two experts for their take on the image, which was shot in the White House a day after the inauguration.</p>
+            <div className="pb-2">
+              <span className="pe-5 border-e-2">13 hrs ago</span>
+              <span className="ps-5">US & Canada</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-5 group cursor-pointer">
+            <h1 className="font-bold text-xl group-hover:underline">Abramovich dodged millions in tax with superyachts-for-hire scheme</h1>
+            <p>Shell companies were used to charter the sanctioned oligarch’s yachts to himself, evading VAT, BBC reveals.</p>
+            <div className="pb-2">
+              <span className="pe-5 border-e-2">5 hrs ago</span>
+              <span className="ps-5">US & Canada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto py-12 gap-5 flex flex-col border-b-2">
+        <h1 className="font-bold text-3xl">Only from the JND</h1>
+        <div className="grid grid-cols-2 gap-5">
+          <div className="flex flex-col gap-5 border-b-2 group cursor-pointer">
+            <img src="https://ichef.bbci.co.uk/images/ic/1024x576/p0kmf4fd.jpg.webp" alt="" />
+            <h3 className="font-bold text-xl group-hover:underline">11 of the best TV shows to watch this February</h3>
+            <p>From the return of HBO's holiday-resort satire to a political thriller starring Robert De Niro and the latest violent period drama from Peaky Blinders creator Stephen Knight.</p>
+            <div className="pb-2">
+              <span className="pe-5 border-e-2">20 hrs ago</span>
+              <span className="ps-5">Culture</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-5 border-b-2 group cursor-pointer">
+            <img src="https://ichef.bbci.co.uk/images/ic/1024x576/p0kmdc9b.jpg.webp" alt="" />
+            <h3 className="font-bold text-xl group-hover:underline">A new life for empty offices: Growing kale and cucumbers</h3>
+            <p>In some cities, as many as one in four office spaces are vacant. Some start-ups are giving them a second life – as indoor farms growing crops.</p>
+            <div className="pb-2">
+              <span className="pe-5 border-e-2">21 hrs ago</span>
+              <span className="ps-5">Future</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto py-12 gap-5 flex flex-col">
+        <div className="flex items-center group w-fit cursor-pointer">
+          <h1 className="font-bold text-2xl group-hover:underline">More news</h1>
+          <ChevronRight size={40}/>
+        </div>
+        <div className="grid grid-cols-5 gap-5">
+          <div className="flex flex-col gap-5 group cursor-pointer">
+            <h3 className="font-bold text-xl group-hover:underline">Microsoft in talks to buy TikTok, Trump says</h3>
+            <div className="pb-2">
+              <span className="pe-3 border-e-2">12 hrs ago</span>
+              <span className="ps-3">Future</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-5 group cursor-pointer">
+            <h3 className="font-bold text-xl group-hover:underline">Friends reunited? Trump faces a very different Kim Jong Un this time</h3>
+            <div className="pb-2">
+              <span className="pe-3 border-e-2">10 hrs ago</span>
+              <span className="ps-3">BBC JDN InDepth</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-5 group cursor-pointer">
+            <h3 className="font-bold text-xl group-hover:underline">How a kabaddi club in India is changing girls' lives</h3>
+            <div className="pb-2">
+              <span className="pe-3 border-e-2">17 hrs ago</span>
+              <span className="ps-3">Asia</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-5 group cursor-pointer">
+            <h3 className="font-bold text-xl group-hover:underline">Trump says India 'will do what's right' on illegal immigration</h3>
+            <div className="pb-2">
+              <span className="pe-3 border-e-2">10 hrs ago</span>
+              <span className="ps-3">World</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-5 group cursor-pointer">
+            <h3 className="font-bold text-xl group-hover:underline">BBC travels with first Jordanian helicopter delivering aid inside Gaza</h3>
+            <div className="pb-2">
+              <span className="pe-3 border-e-2">3 hrs ago</span>
+              <span className="ps-3">Future</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="border-y-2 h-10">
+
       </div>
     </div>
   );
