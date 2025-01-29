@@ -99,8 +99,66 @@ export default function Home() {
     // </div>
     <div className="dark:text-white text-black">
       <div className="border-b-2">
-        <div className="container mx-auto my-5">
-          Home Page
+        <div className="container mx-auto my-5 grid grid-cols-4 gap-5">
+          <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 border-b-2">
+              <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/a483/live/4646bcc0-dd5e-11ef-8e2a-672c89b13e12.jpg.webp" alt="" />
+              <h3 className="font-bold text-xl">DeepSeek: How China's 'AI heroes' overcame US curbs to stun Silicon Valley</h3>
+              <p>How did a little-known Chinese start-up build a powerful new AI model despite restrictions?</p>
+              <div className="pb-2">
+                <span className="pe-5 border-e-2">18 hrs ago</span>
+                <span className="ps-5">Asia</span>
+              </div>
+            </div>
+            <div className="flex flex-col gap-5 border-b-2">
+              <img src="https://ichef.bbci.co.uk/ace/standard/480/cpsprodpb/4fe8/live/993cea00-dd6b-11ef-bc01-8f2c83dad217.jpg.webp" alt="" />
+              <h3 className="font-bold text-xl">Bodies in streets as battle escalates in DR Congo city</h3>
+              <p>UN aid agencies are warning of a humanitarian crisis in Goma in the east of the Democratic Republic of Congo.</p>
+              <div className="pb-2">
+                <span className="pe-5 border-e-2">18 hrs ago</span>
+                <span className="ps-5">Asia</span>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-2 flex flex-col gap-5">
+            <img className="w-full" src="https://ichef.bbci.co.uk/ace/standard/640/cpsprodpb/302e/live/95adcf10-dcd7-11ef-902e-cf9b84dc1357.jpg.webp" alt=""/>
+            <h1 className="font-bold text-4xl">Small rebound for Nvidia shares as US stock markets reopen after DeepSeek shock</h1>
+            <p>Shares for leading US chip firm Nvidia dropped by almost 17% on Monday after the emergence of DeepSeek stunned Silicon Valley.</p>
+          </div>
+          <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 border-b-2">
+              <h1 className="font-bold text-xl">Abramovich dodged millions in tax with superyachts-for-hire scheme</h1>
+              <p>Shell companies were used to charter the sanctioned oligarch’s yachts to himself, evading VAT, BBC reveals.</p>
+              <div className="pb-2">
+                <span className="pe-5 border-e-2">11 hrs ago</span>
+                <span className="ps-5">World</span>
+              </div>
+            </div>
+            <div className="flex flex-col gap-5 border-b-2">
+              <h1 className="font-bold text-xl">RFK Jr v Dr Oz and a looming battle over weight-loss drugs</h1>
+              <p>Experts say high demand for the drugs could force officials to make a decision on insurance coverage.</p>
+              <div className="pb-2">
+                <span className="pe-5 border-e-2">10 hrs ago</span>
+                <span className="ps-5">Health</span>
+              </div>
+            </div>
+            <div className="flex flex-col gap-5 border-b-2">
+              <h1 className="font-bold text-xl">Decoding Melania Trump's new official portrait</h1>
+              <p>We asked two experts for their take on the image, which was shot in the White House a day after the inauguration.</p>
+              <div className="pb-2">
+                <span className="pe-5 border-e-2">13 hrs ago</span>
+                <span className="ps-5">US & Canada</span>
+              </div>
+            </div>
+            <div className="flex flex-col gap-5 border-b-2">
+              <h1 className="font-bold text-xl">Abramovich dodged millions in tax with superyachts-for-hire scheme</h1>
+              <p>Shell companies were used to charter the sanctioned oligarch’s yachts to himself, evading VAT, BBC reveals.</p>
+              <div className="pb-2">
+                <span className="pe-5 border-e-2">5 hrs ago</span>
+                <span className="ps-5">US & Canada</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
