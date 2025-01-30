@@ -1,8 +1,22 @@
 // import Image from "next/image";
 
-import { ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react"
 
-export default function Home() {
+interface News {
+  
+}
+
+const fetchHomeNews = async () => {
+  const apikey = process.env.API_KEY
+  const data = await fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${apikey}`)
+  const news = await data.json()
+  return news.results
+}
+
+export default async function Home() {
+  const homeNews = await fetchHomeNews()
+  console.log(homeNews[0].title)
+
   return (
     // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
     //   <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -123,9 +137,9 @@ export default function Home() {
         </div>
         <div className="col-span-2">
           <div className="flex flex-col gap-5 group cursor-pointer">
-            <img className="w-full" src="https://ichef.bbci.co.uk/ace/standard/640/cpsprodpb/302e/live/95adcf10-dcd7-11ef-902e-cf9b84dc1357.jpg.webp" alt="" />
-            <h1 className="font-bold text-4xl group-hover:underline">Small rebound for Nvidia shares as US stock markets reopen after DeepSeek shock</h1>
-            <p>Shares for leading US chip firm Nvidia dropped by almost 17% on Monday after the emergence of DeepSeek stunned Silicon Valley.</p>
+            <img className="w-full" src={homeNews[0].multimedia[0].url} alt={homeNews[0].multimedia[0].caption} />
+            <h1 className="font-bold text-4xl group-hover:underline">{homeNews[0].title}</h1>
+            <p>{homeNews[0].abstract}</p>
           </div>
         </div>
         <div className="flex flex-col gap-5">
