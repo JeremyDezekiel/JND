@@ -2,6 +2,7 @@
 
 import { Menu, Search, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -39,14 +40,16 @@ export default function Navbar() {
                     }
                 </div>
                 <div className="flex justify-center">
-                    <Image
-                        className="my-5 w-44 h-auto cursor-pointer"
-                        src="/assets/dark-mode.png"
-                        alt="Logo"
-                        width={150}
-                        height={50}
-                        priority
-                    />
+                    <Link href='/'>
+                        <Image
+                            className="my-5 w-44 h-auto cursor-pointer"
+                            src="/assets/dark-mode.png"
+                            alt="Logo"
+                            width={150}
+                            height={50}
+                            priority
+                        />
+                    </Link>
                 </div>
                 <div className="flex justify-end gap-5">
                     <button className="bg-white hover:bg-gray-300 text-black font-semibold px-3 py-2">Register</button>
