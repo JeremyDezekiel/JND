@@ -1,21 +1,16 @@
 // import Image from "next/image";
-
+import Top1Article from "@/components/top-1-article"
+import CardArticleImage from "@/components/card-article-image"
+import { fetchNews } from "@/fetch-news"
 import { ChevronRight } from "lucide-react"
+import CardArticle from "@/components/card-article"
+import CardNewsWithoutArticle from "@/components/card-news-without-article"
+import Link from "next/link"
 
-interface News {
-  
-}
-
-const fetchHomeNews = async () => {
-  const apikey = process.env.API_KEY
-  const data = await fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${apikey}`)
-  const news = await data.json()
-  return news.results
-}
+const page = "home"
 
 export default async function Home() {
-  const homeNews = await fetchHomeNews()
-  console.log(homeNews[0].title)
+  const news = await fetchNews(page)
 
   return (
     // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -116,130 +111,45 @@ export default async function Home() {
     <div className="dark:text-white text-black">
       <div className="container mx-auto py-5 grid grid-cols-4 gap-5 border-b-2">
         <div className="flex flex-col gap-5">
-          <div className="flex flex-col gap-5 border-b-2 group cursor-pointer">
-            <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/a483/live/4646bcc0-dd5e-11ef-8e2a-672c89b13e12.jpg.webp" alt="" />
-            <h3 className="font-bold text-xl group-hover:underline">DeepSeek: How China's 'AI heroes' overcame US curbs to stun Silicon Valley</h3>
-            <p>How did a little-known Chinese start-up build a powerful new AI model despite restrictions?</p>
-            <div className="pb-2">
-              <span className="pe-5 border-e-2">18 hrs ago</span>
-              <span className="ps-5">Asia</span>
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 group cursor-pointer">
-            <img src="https://ichef.bbci.co.uk/ace/standard/480/cpsprodpb/4fe8/live/993cea00-dd6b-11ef-bc01-8f2c83dad217.jpg.webp" alt="" />
-            <h3 className="font-bold text-xl group-hover:underline">Bodies in streets as battle escalates in DR Congo city</h3>
-            <p>UN aid agencies are warning of a humanitarian crisis in Goma in the east of the Democratic Republic of Congo.</p>
-            <div className="pb-2">
-              <span className="pe-5 border-e-2">18 hrs ago</span>
-              <span className="ps-5">Asia</span>
-            </div>
-          </div>
+          {
+            news.slice(1, 1 + 2).map((item, idx) => (
+              <CardArticleImage key={idx} news={item}/>
+            ))
+          }
         </div>
         <div className="col-span-2">
-          <div className="flex flex-col gap-5 group cursor-pointer">
-            <img className="w-full" src={homeNews[0].multimedia[0].url} alt={homeNews[0].multimedia[0].caption} />
-            <h1 className="font-bold text-4xl group-hover:underline">{homeNews[0].title}</h1>
-            <p>{homeNews[0].abstract}</p>
-          </div>
+          <Top1Article news={news[0]} page={page}/>
         </div>
         <div className="flex flex-col gap-5">
-          <div className="flex flex-col gap-5 border-b-2 group cursor-pointer">
-            <h1 className="font-bold text-xl group-hover:underline">Abramovich dodged millions in tax with superyachts-for-hire scheme</h1>
-            <p>Shell companies were used to charter the sanctioned oligarch’s yachts to himself, evading VAT, BBC reveals.</p>
-            <div className="pb-2">
-              <span className="pe-5 border-e-2">11 hrs ago</span>
-              <span className="ps-5">World</span>
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 border-b-2 group cursor-pointer">
-            <h1 className="font-bold text-xl group-hover:underline">RFK Jr v Dr Oz and a looming battle over weight-loss drugs</h1>
-            <p>Experts say high demand for the drugs could force officials to make a decision on insurance coverage.</p>
-            <div className="pb-2">
-              <span className="pe-5 border-e-2">10 hrs ago</span>
-              <span className="ps-5">Health</span>
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 border-b-2 group cursor-pointer">
-            <h1 className="font-bold text-xl group-hover:underline">Decoding Melania Trump's new official portrait</h1>
-            <p>We asked two experts for their take on the image, which was shot in the White House a day after the inauguration.</p>
-            <div className="pb-2">
-              <span className="pe-5 border-e-2">13 hrs ago</span>
-              <span className="ps-5">US & Canada</span>
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 group cursor-pointer">
-            <h1 className="font-bold text-xl group-hover:underline">Abramovich dodged millions in tax with superyachts-for-hire scheme</h1>
-            <p>Shell companies were used to charter the sanctioned oligarch’s yachts to himself, evading VAT, BBC reveals.</p>
-            <div className="pb-2">
-              <span className="pe-5 border-e-2">5 hrs ago</span>
-              <span className="ps-5">US & Canada</span>
-            </div>
-          </div>
+          {
+            news.slice(3, 3 + 4).map((item, idx) => (
+              <CardArticle key={idx} news={item}/>
+            ))
+          }
         </div>
       </div>
       <div className="container mx-auto py-12 gap-5 flex flex-col border-b-2">
         <h1 className="font-bold text-3xl">Only from the JND</h1>
         <div className="grid grid-cols-2 gap-5">
-          <div className="flex flex-col gap-5 border-b-2 group cursor-pointer">
-            <img src="https://ichef.bbci.co.uk/images/ic/1024x576/p0kmf4fd.jpg.webp" alt="" />
-            <h3 className="font-bold text-xl group-hover:underline">11 of the best TV shows to watch this February</h3>
-            <p>From the return of HBO's holiday-resort satire to a political thriller starring Robert De Niro and the latest violent period drama from Peaky Blinders creator Stephen Knight.</p>
-            <div className="pb-2">
-              <span className="pe-5 border-e-2">20 hrs ago</span>
-              <span className="ps-5">Culture</span>
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 border-b-2 group cursor-pointer">
-            <img src="https://ichef.bbci.co.uk/images/ic/1024x576/p0kmdc9b.jpg.webp" alt="" />
-            <h3 className="font-bold text-xl group-hover:underline">A new life for empty offices: Growing kale and cucumbers</h3>
-            <p>In some cities, as many as one in four office spaces are vacant. Some start-ups are giving them a second life – as indoor farms growing crops.</p>
-            <div className="pb-2">
-              <span className="pe-5 border-e-2">21 hrs ago</span>
-              <span className="ps-5">Future</span>
-            </div>
-          </div>
+          {
+            news.slice(7, 7 + 2).map((item, idx) => (
+              <CardArticleImage key={idx} news={item}/>
+            ))
+          }
         </div>
       </div>
-      <div className="container mx-auto py-12 gap-5 flex flex-col">
-        <div className="flex items-center group w-fit cursor-pointer">
-          <h1 className="font-bold text-2xl group-hover:underline">More news</h1>
-          <ChevronRight size={40}/>
-        </div>
-        <div className="grid grid-cols-5 gap-5">
-          <div className="flex flex-col gap-5 group cursor-pointer">
-            <h3 className="font-bold text-xl group-hover:underline">Microsoft in talks to buy TikTok, Trump says</h3>
-            <div className="pb-2">
-              <span className="pe-3 border-e-2">12 hrs ago</span>
-              <span className="ps-3">Future</span>
-            </div>
+      <div className="container mx-auto">
+        <div className="py-12 gap-5 flex flex-col">
+          <div className="flex items-center group w-fit cursor-pointer">
+            <Link href="/more-news/home" className="font-bold text-2xl group-hover:underline">More news</Link>
+            <ChevronRight size={40}/>
           </div>
-          <div className="flex flex-col gap-5 group cursor-pointer">
-            <h3 className="font-bold text-xl group-hover:underline">Friends reunited? Trump faces a very different Kim Jong Un this time</h3>
-            <div className="pb-2">
-              <span className="pe-3 border-e-2">10 hrs ago</span>
-              <span className="ps-3">BBC JDN InDepth</span>
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 group cursor-pointer">
-            <h3 className="font-bold text-xl group-hover:underline">How a kabaddi club in India is changing girls' lives</h3>
-            <div className="pb-2">
-              <span className="pe-3 border-e-2">17 hrs ago</span>
-              <span className="ps-3">Asia</span>
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 group cursor-pointer">
-            <h3 className="font-bold text-xl group-hover:underline">Trump says India 'will do what's right' on illegal immigration</h3>
-            <div className="pb-2">
-              <span className="pe-3 border-e-2">10 hrs ago</span>
-              <span className="ps-3">World</span>
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 group cursor-pointer">
-            <h3 className="font-bold text-xl group-hover:underline">BBC travels with first Jordanian helicopter delivering aid inside Gaza</h3>
-            <div className="pb-2">
-              <span className="pe-3 border-e-2">3 hrs ago</span>
-              <span className="ps-3">Future</span>
-            </div>
+          <div className="grid grid-cols-5 gap-5">
+            {
+              news.slice(9, 9 + 5).map((item, idx) => (
+                <CardNewsWithoutArticle key={idx} news={item}/>
+              ))
+            }
           </div>
         </div>
       </div>
