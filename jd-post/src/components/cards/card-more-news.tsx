@@ -1,5 +1,4 @@
 import { formatRelativeTime, formatSection } from "@/formats";
-import { News } from "@/types";
 
 export default function CardMoreNews({ news }: { news: News}) {
     return (
@@ -17,7 +16,7 @@ export default function CardMoreNews({ news }: { news: News}) {
                             <span>{news.byline}</span>
                         </div>
                     </div>
-                    <img src={news.multimedia[1].url} alt={news.multimedia[0].caption} />
+                    <img src={news.multimedia[1].url} alt={news.multimedia[1].caption} />
                 </div>
             </div>
         </a>
