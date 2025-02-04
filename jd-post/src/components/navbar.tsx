@@ -115,12 +115,14 @@ export default function Navbar() {
                             </Link>
                         </div>
                     </div>
-                    <Link href="/search" className="ms-auto">
-                        <Search
-                            className="cursor-pointer"
-                            size={35}
-                        />
-                    </Link>
+                    <div className="ms-auto">
+                        <Link href="/search" className={`${pathname === "/search" ? "hidden" : ""}`}>
+                            <Search
+                                className="cursor-pointer"
+                                size={35}
+                            />
+                        </Link>
+                    </div>
                 </div>
             </div>
             <div
