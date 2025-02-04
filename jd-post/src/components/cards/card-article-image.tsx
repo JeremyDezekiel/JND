@@ -3,7 +3,7 @@ import { formatRelativeTime, formatSection } from "@/formats"
 export default function CardArticleImage({ news, page }: { news: News, page: string }) {
     return (
         <a href={news.url} target="_blank" rel="noopener noreferrer" className="h-fit">
-            <div className={`flex flex-col gap-5 group cursor-pointer h-fit ${page !== "world" ? 'border-b-2' : ''}`}>
+            <article className={`flex flex-col gap-5 group cursor-pointer h-fit ${page !== "world" ? 'border-b-2' : ''}`}>
                 <img className="w-fit self-center" src={news.multimedia[1].url} alt={news.multimedia[1].caption} />
                 <h3 className="font-bold text-xl group-hover:underline">{news.title}</h3>
                 {
@@ -22,7 +22,7 @@ export default function CardArticleImage({ news, page }: { news: News, page: str
                         </>
                     )
                 }
-            </div>
+            </article>
         </a>
     )
 }

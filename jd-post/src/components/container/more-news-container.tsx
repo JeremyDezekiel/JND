@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function MoreNewsContainer({ news, params, startIndex }: { news: News[], params: string, startIndex: number }) {
     return (
-        <div className={`gap-5 flex flex-col ${params === "fashion" || params === "food" ? startIndex === 3 ? "py-10 border-b-2" : "py-12" : "py-12"}`}>
+        <section className={`gap-5 flex flex-col ${params === "fashion" || params === "food" ? startIndex === 3 ? "py-10 border-b-2" : "py-12" : "py-12"}`}>
             {
                 (params === "fashion" || params === "food") && startIndex === 3 ? (
                     <h1 className="font-bold text-3xl">In the news</h1>
@@ -22,6 +22,6 @@ export default function MoreNewsContainer({ news, params, startIndex }: { news: 
                     ))
                 }
             </div>
-        </div >
+        </section >
     )
 }

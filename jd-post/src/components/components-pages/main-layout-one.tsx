@@ -11,43 +11,43 @@ import MainLayoutSMMD from "./main-layout-sm-md";
 export default function MainLayoutOne({ news, params }: { news: News[], params: string }) {
     return (
         <div>
-            <div className="container mx-auto hidden lg:block">
+            <main className="container mx-auto hidden lg:block">
                 {
                     params !== "home" && (
                         <h1 className="my-5 border-b-2 text-5xl font-bold text-red-600">{params.toUpperCase()}</h1>
                     )
                 }
-                <div className=" py-5 grid grid-cols-4 gap-5 border-b-2">
-                    <div className="flex flex-col gap-5">
+                <section className=" py-5 grid grid-cols-4 gap-5 border-b-2">
+                    <aside className="flex flex-col gap-5">
                         {
                             news.slice(1, 1 + 2).map((item, idx) => (
                                 <CardArticleImage key={idx} news={item} page={params} />
                             ))
                         }
-                    </div>
-                    <div className="col-span-2 flex flex-col gap-10">
+                    </aside>
+                    <section className="col-span-2 flex flex-col gap-10">
                         <Top1Article news={news[0]} page={params} />
-                        <div className="flex flex-col gap-5">
+                        <section className="flex flex-col gap-5">
                             {
                                 news.slice(7, 7 + 2).map((item, idx) => (
                                     <CardTitle key={idx} news={item} />
                                 ))
                             }
-                        </div>
-                    </div>
-                    <div className="flex flex-col gap-5">
+                        </section>
+                    </section>
+                    <aside className="flex flex-col gap-5">
                         {
                             news.slice(3, 3 + 4).map((item, idx) => (
                                 <CardArticle key={idx} news={item} />
                             ))
                         }
-                    </div>
-                </div>
+                    </aside>
+                </section>
                 <TwoCardArticleImageContainer news={news} page={params} startIndex={9} />
                 <FourCardArticleCountainer news={news} startIndex={11} />
                 <OneCardTopArticleContainer news={news[15]} />
                 <MoreNewsContainer news={news} params={params} startIndex={16} />
-            </div>
+            </main>
             <MainLayoutSMMD news={news} params={params} />
             <div className="border-y-2 h-10">
 

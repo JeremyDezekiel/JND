@@ -9,9 +9,9 @@ import MainLayoutSMMD from "./main-layout-sm-md";
 export default function MainLayoutTwo({ news, params }: { news: News[], params: string }) {
     return (
         <div>
-            <div className="container mx-auto hidden lg:block">
+            <main className="container mx-auto hidden lg:block">
                 <h1 className="my-5 border-b-2 text-5xl font-bold text-red-600">{params.toUpperCase()}</h1>
-                <div className="grid grid-cols-4 gap-x-5 gap-y-10 border-b-2 pb-10">
+                <section className="grid grid-cols-4 gap-x-5 gap-y-10 border-b-2 pb-10">
                     <div className="col-span-3">
                         <Top1Article news={news[0]} page={params} />
                     </div>
@@ -31,11 +31,11 @@ export default function MainLayoutTwo({ news, params }: { news: News[], params: 
                             ))
                         }
                     </div>
-                </div>
+                </section>
                 <TwoCardArticleImageContainer news={news} startIndex={9} page={params} />
                 <OneCardTopArticleContainer news={news[11]} />
                 <MoreNewsContainer news={news} params={params} startIndex={12}/>
-            </div>
+            </main>
             <MainLayoutSMMD news={news} params={params} />
             <div className="border-y-2 h-10">
 

@@ -3,7 +3,7 @@ import { formatRelativeTime, formatSection } from "@/formats";
 export default function TopArticleOne({ news, page }: { news: News, page: string }) {
     return (
         <a href={news.url} target="_blank" rel="noopener noreferrer">
-            <div className="flex flex-col gap-5 group cursor-pointer">
+            <article className="flex flex-col gap-5 group cursor-pointer">
                 <img className="w-full" src={news.multimedia[0].url} alt={news.multimedia[0].caption} />
                 <h1 className="font-bold text-4xl group-hover:underline">{news.title}</h1>
                 <p className={`${page === "world" ? 'text-center mx-5' : ''}`}>{news.abstract}</p>
@@ -17,7 +17,7 @@ export default function TopArticleOne({ news, page }: { news: News, page: string
                         </div>
                     )
                 }
-            </div>
+            </article>
         </a>
     )
 }

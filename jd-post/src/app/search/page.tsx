@@ -39,7 +39,7 @@ export default function SearchPage() {
     return (
         <div>
             <div className="container mx-auto my-10">
-                <div>
+                <header>
                     <form className="flex h-16 group" onSubmit={handleSearch}>
                         <input
                             type="text"
@@ -57,8 +57,8 @@ export default function SearchPage() {
                             <Search />
                         </button>
                     </form>
-                </div>
-                <div>
+                </header>
+                <main>
                     {loading ? (
                         [...Array(3)].map((_, idx) => (
                             <SkeletonCardSearch key={idx} />
@@ -74,7 +74,7 @@ export default function SearchPage() {
                             Please search for news, topics, and more.
                         </h1>
                     )}
-                </div>
+                </main>
             </div>
             <div className="border-y-2 h-10">
 

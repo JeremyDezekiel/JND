@@ -2,7 +2,7 @@ import CardArticleImage from "../cards/card-article-image";
 
 export default function TwoCardArticleImageContainer({ news, startIndex, page }: { news: News[], startIndex: number, page: string}) {
     return (
-        <div className=" py-10 gap-5 flex flex-col border-b-2">
+        <section className=" py-10 gap-5 flex flex-col border-b-2">
             {
                 page === "business" ? (
                     <h1 className="font-bold text-4xl">Analysis</h1>
@@ -19,6 +19,6 @@ export default function TwoCardArticleImageContainer({ news, startIndex, page }:
                     ))
                 }
             </div>
-        </div>
+        </section>
     )
 }
