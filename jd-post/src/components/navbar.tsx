@@ -9,15 +9,15 @@ import LiveTime from "./live-time"
 
 export default function Navbar() {
     const pathname = usePathname()
-    const [aside, setAside] = useState(false)
+    const [sidebar, setSidebar] = useState(false)
 
-    const toggleAside = () => {
-        setAside(prevValue => !prevValue)
+    const toggleSidebar = () => {
+        setSidebar(prevValue => !prevValue)
     }
 
     return (
         <>
-            <div className="sticky top-0 z-10 bg-white dark:bg-black hidden lg:block">
+            <nav className="sticky top-0 z-10 bg-white dark:bg-black hidden lg:block">
                 <div className="grid grid-cols-3 items-center px-5 border-b-2 border-black dark:border-white">
                     <div className="me-auto">
                         <LiveTime />
@@ -69,22 +69,22 @@ export default function Navbar() {
                     <Link href="/section/food" className={`hover:dark:bg-gray-700 hover:bg-gray-200 p-2 border-black dark:border-white ${pathname === "/section/food" || pathname === "/more-news/food" ? "border-b-2" : ""}`}>Food</Link>
                     <Link href="/section/travel" className={`hover:dark:bg-gray-700 hover:bg-gray-200 p-2 border-black dark:border-white ${pathname === "/section/travel" || pathname === "/more-news/travel" ? "border-b-2" : ""}`}>Travel</Link>
                 </div>
-            </div>
-            <div className="sticky top-0 z-10 bg-white dark:bg-black block lg:hidden">
+            </nav>
+            <nav className="sticky top-0 z-10 bg-white dark:bg-black block lg:hidden">
                 <div className="grid grid-cols-3 items-center px-5 border-b-2 border-black dark:border-white">
                     <div className="flex items-center gap-2">
                         {
-                            aside === false ? (
+                            sidebar === false ? (
                                 <Menu
                                     className="cursor-pointer"
                                     size={35}
-                                    onClick={toggleAside}
+                                    onClick={toggleSidebar}
                                 />
                             ) : (
                                 <X
                                     className="cursor-pointer hover:bg-gray-700"
                                     size={35}
-                                    onClick={toggleAside}
+                                    onClick={toggleSidebar}
                                 />
                             )
                         }
@@ -124,76 +124,76 @@ export default function Navbar() {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </nav>
             <div
-                className={`fixed top-20 bg-white text-black left-0 z-50 w-screen h-screen transition-transform duration-300 ease-in-out transform ${aside ? "translate-x-0" : "-translate-x-full"}`}
+                className={`fixed top-20 bg-white text-black left-0 z-50 w-screen h-screen transition-transform duration-300 ease-in-out transform ${sidebar ? "translate-x-0" : "-translate-x-full"}`}
             >
                 <div className="mb-5 flex flex-col">
                     <Link
                         href="/"
                         className={`p-2 border-b-[1px] cursor-pointer hover:bg-slate-300 ${pathname === "/" || pathname === "/more-news/home" ? "border-s-8 border-black" : "mx-2"}`}
-                        onClick={() => setAside(false)}
+                        onClick={() => setSidebar(false)}
                     >
                         Home
                     </Link>
                     <Link
                         href="/section/sports"
                         className={`p-2 border-b-[1px] cursor-pointer hover:bg-slate-300 ${pathname === "/section/sports" || pathname === "/more-news/sports" ? "border-s-8 border-black" : "mx-2"}`}
-                        onClick={() => setAside(false)}
+                        onClick={() => setSidebar(false)}
                     >
                         Sports
                     </Link>
                     <Link
                         href="/section/business"
                         className={`p-2 border-b-[1px] cursor-pointer hover:bg-slate-300 ${pathname === "/section/business" || pathname === "/more-news/business" ? "border-s-8 border-black" : "mx-2"}`}
-                        onClick={() => setAside(false)}
+                        onClick={() => setSidebar(false)}
                     >
                         Business
                     </Link>
                     <Link
                         href="/section/fashion"
                         className={`p-2 border-b-[1px] cursor-pointer hover:bg-slate-300 ${pathname === "/section/fashion" || pathname === "/more-news/fashion" ? "border-s-8 border-black" : "mx-2"}`}
-                        onClick={() => setAside(false)}
+                        onClick={() => setSidebar(false)}
                     >
                         Fashion
                     </Link>
                     <Link
                         href="/section/science" className={`p-2 border-b-[1px] cursor-pointer hover:bg-slate-300 ${pathname === "/section/science" || pathname === "/more-news/science" ? "border-s-8 border-black" : "mx-2"}`}
-                        onClick={() => setAside(false)}
+                        onClick={() => setSidebar(false)}
                     >
                         Science
                     </Link>
                     <Link
                         href="/section/arts" className={`p-2 border-b-[1px] cursor-pointer hover:bg-slate-300 ${pathname === "/section/arts" || pathname === "/more-news/arts" ? "border-s-8 border-black" : "mx-2"}`}
-                        onClick={() => setAside(false)}
+                        onClick={() => setSidebar(false)}
                     >
                         Arts
                     </Link>
                     <Link
                         href="/section/movies"
                         className={`p-2 border-b-[1px] cursor-pointer hover:bg-slate-300 ${pathname === "/section/movies" || pathname === "/more-news/movies" ? "border-s-8 border-black" : "mx-2"}`}
-                        onClick={() => setAside(false)}
+                        onClick={() => setSidebar(false)}
                     >
                         Movies
                     </Link>
                     <Link
                         href="/section/world"
                         className={`p-2 border-b-[1px] cursor-pointer hover:bg-slate-300 ${pathname === "/section/world" || pathname === "/more-news/world" ? "border-s-8 border-black" : "mx-2"}`}
-                        onClick={() => setAside(false)}
+                        onClick={() => setSidebar(false)}
                     >
                         World
                     </Link>
                     <Link
                         href="/section/food"
                         className={`p-2 border-b-[1px] cursor-pointer hover:bg-slate-300 ${pathname === "/section/food" || pathname === "/more-news/food" ? "border-s-8 border-black" : "mx-2"}`}
-                        onClick={() => setAside(false)}
+                        onClick={() => setSidebar(false)}
                     >
                         Food
                     </Link>
                     <Link
                         href="/section/travel"
                         className={`p-2 border-b-[1px] cursor-pointer hover:bg-slate-300 ${pathname === "/section/travel" || pathname === "/more-news/travel" ? "border-s-8 border-black" : "mx-2"}`}
-                        onClick={() => setAside(false)}
+                        onClick={() => setSidebar(false)}
                     >
                         Travel
                     </Link>

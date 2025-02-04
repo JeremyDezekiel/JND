@@ -8,7 +8,7 @@ export default function Footer() {
     const pathname = usePathname()
 
     return (
-        <div>
+        <footer>
             <div className="container mx-auto">
                 <div className="hidden dark:flex">
                     <Link href="/">
@@ -79,6 +79,6 @@ export default function Footer() {
                 </ul>
                 <p className="mb-5">Copyright 2025 JDN. All rights reserved. The JDN is not responsible for the content of external sites. <b className="cursor-pointer">Read about our approach to external linking.</b></p>
             </div>
-        </div>
+        </footer>
     )
 }
