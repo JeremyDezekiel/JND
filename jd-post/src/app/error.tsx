@@ -15,16 +15,10 @@ export default function Error({
     }, [error])
 
     return (
-        <div className='container mx-auto text-center h-[50lvh] flex flex-col justify-center gap-10'>
-            <h2 className='font-bold text-4xl animate-bounce'>Something went wrong!</h2>
-            {/* <button
-                onClick={
-                    // Attempt to recover by trying to re-render the segment
-                    () => reset()
-                }
-            >
-                Try again
-            </button> */}
+        <div className='flex flex-col justify-center items-center h-screen mx-auto'>
+            <h2 className='font-bold text-4xl text-red-600'>Something went wrong!</h2>
+            <p>{error.message}</p>
+            <p className='mx-10 text-center'>{error.stack}</p>
         </div>
     )
 }
