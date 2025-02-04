@@ -12,7 +12,7 @@ export default function TwoCardArticleImageContainer({ news, startIndex, page }:
                     <h1 className="font-bold text-3xl">Only from the JND</h1>
                 )
             }
-            <div className="grid grid-cols-2 gap-5">
+            <div className="lg:grid lg:grid-cols-2 gap-5 flex flex-col">
                 {
                     news.slice(startIndex, startIndex + 2).map((item, idx) => (
                         <CardArticleImage key={idx} news={item} page={page} />

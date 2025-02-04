@@ -8,16 +8,16 @@ export default function MoreNewsPagination({ news }: { news: News[] }) {
     const [maxNews, setMaxNews] = useState(10)
 
     return (
-        <div className="flex flex-col gap-10 justify-center mx-40 mt-10">
+        <div className="flex flex-col gap-10 justify-center mx-4 sm:mx-10 lg:mx-40 mt-10">
             {
-                news.slice(0, 0 + maxNews).map((item, idx) => (
+                news.slice(0, maxNews).map((item, idx) => (
                     <CardMoreNews key={idx} news={item} />
                 ))
             }
             {
                 maxNews < news.length && (
                     <button
-                        className="border py-2 px-5 rounded-lg w-fit self-end hover:bg-white hover:text-black"
+                        className="border py-2 px-5 rounded-lg w-fit self-center sm:self-end hover:bg-white hover:text-black"
                         onClick={() => setMaxNews(prevValue => prevValue + 10)}
                         disabled={maxNews >= news.length}
                     >

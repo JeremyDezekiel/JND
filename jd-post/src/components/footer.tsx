@@ -34,7 +34,7 @@ export default function Footer() {
                         />
                     </Link>
                 </div>
-                <div className="flex gap-5 mb-5 border-b-2 pb-5">
+                <div className="flex gap-5 mb-5 border-b-2 pb-5 flex-col lg:flex-row">
                     <Link href="/" className={`hover:underline ${pathname === "/" || pathname === "/more-news/home" ? "underline" : ""}`}>Home</Link>
                     <Link href="/section/sports" className={`hover:underline ${pathname === "/section/sports" || pathname === "/more-news/sports" ? "underline" : ""}`}>Sports</Link>
                     <Link href="/section/business" className={`hover:underline ${pathname === "/section/business" || pathname === "/more-news/business" ? "underline" : ""}`}>Business</Link>
@@ -66,7 +66,7 @@ export default function Footer() {
                         </a>
                     </div>
                 </div>
-                <ul className="flex gap-5 text-sm mb-5">
+                <ul className="lg:flex gap-5 text-sm mb-5 grid grid-cols-3">
                     <li className="cursor-pointer hover:underline">Terms of Use</li>
                     <li className="cursor-pointer hover:underline">About the JND</li>
                     <li className="cursor-pointer hover:underline">Privacy Policy</li>

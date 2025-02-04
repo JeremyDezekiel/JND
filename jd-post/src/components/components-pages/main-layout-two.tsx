@@ -4,11 +4,12 @@ import Top1Article from "../top-1-article"
 import MoreNewsContainer from "../container/more-news-container";
 import TwoCardArticleImageContainer from "../container/two-card-article-image-container";
 import OneCardTopArticleContainer from "../container/one-card-top-article-container";
+import MainLayoutSMMD from "./main-layout-sm-md";
 
 export default function MainLayoutTwo({ news, params }: { news: News[], params: string }) {
     return (
         <div>
-            <div className="container mx-auto">
+            <div className="container mx-auto hidden lg:block">
                 <h1 className="my-5 border-b-2 text-5xl font-bold text-red-600">{params.toUpperCase()}</h1>
                 <div className="grid grid-cols-4 gap-x-5 gap-y-10 border-b-2 pb-10">
                     <div className="col-span-3">
@@ -35,6 +36,7 @@ export default function MainLayoutTwo({ news, params }: { news: News[], params: 
                 <OneCardTopArticleContainer news={news[11]} />
                 <MoreNewsContainer news={news} params={params} startIndex={12}/>
             </div>
+            <MainLayoutSMMD news={news} params={params} />
             <div className="border-y-2 h-10">
 
             </div>

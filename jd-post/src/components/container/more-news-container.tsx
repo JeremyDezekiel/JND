@@ -4,9 +4,9 @@ import Link from "next/link"
 
 export default function MoreNewsContainer({ news, params, startIndex }: { news: News[], params: string, startIndex: number }) {
     return (
-        <div className={`gap-5 flex flex-col ${params === "fashion" ? startIndex === 3 && "py-10 border-b-2" : "py-12"}`}>
+        <div className={`gap-5 flex flex-col ${params === "fashion" || params === "food" ? startIndex === 3 ? "py-10 border-b-2" : "py-12" : "py-12"}`}>
             {
-                params ==="fashion" && startIndex === 3 ? (
+                (params === "fashion" || params === "food") && startIndex === 3 ? (
                     <h1 className="font-bold text-3xl">In the news</h1>
                 ) : (
                     <div className="flex items-center group w-fit cursor-pointer">
@@ -15,13 +15,13 @@ export default function MoreNewsContainer({ news, params, startIndex }: { news: 
                     </div >
                 )
             }
-<div className="grid grid-cols-5 gap-5">
-    {
-        news.slice(startIndex, startIndex + 5).map((item, idx) => (
-            <CardNewsWithoutArticle key={idx} news={item} />
-        ))
-    }
-</div>
+            <div className="lg:grid lg:grid-cols-5 gap-5 flex flex-col">
+                {
+                    news.slice(startIndex, startIndex + 5).map((item, idx) => (
+                        <CardNewsWithoutArticle key={idx} news={item} />
+                    ))
+                }
+            </div>
         </div >
     )
 }

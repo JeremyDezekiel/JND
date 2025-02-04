@@ -70,11 +70,14 @@ export default function SearchPage() {
                             <CardSearchPage key={item._id} news={item} />
                         ))
                     ) : (
-                        <h1 className="font-bold text-4xl mt-10">
+                        <h1 className="font-bold text-2xl lg:text-4xl mt-10">
                             Please search for news, topics, and more.
                         </h1>
                     )}
                 </div>
+            </div>
+            <div className="border-y-2 h-10">
+
             </div>
         </div>
     )

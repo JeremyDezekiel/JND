@@ -3,11 +3,12 @@ import MoreNewsContainer from "../container/more-news-container"
 import TwoCardArticleImageContainer from "../container/two-card-article-image-container"
 import Top1Article from "../top-1-article"
 import TopArticleBusiness from "../top-article/top-article-two"
+import MainLayoutSMMD from "./main-layout-sm-md"
 
 export default function MainLayoutThree({ news, params }: { news: News[], params: string }) {
     return (
         <div>
-            <div className="container mx-auto">
+            <div className="container mx-auto hidden lg:block">
                 <h1 className="my-5 border-b-2 text-5xl font-bold text-red-600">{params.toUpperCase()}</h1>
                 <div className="py-10">
                     <Top1Article news={news[0]} page={params} />
@@ -15,7 +16,7 @@ export default function MainLayoutThree({ news, params }: { news: News[], params
                 <TwoCardArticleImageContainer news={news} page={params} startIndex={1} />
                 <MoreNewsContainer news={news} startIndex={3} params={params}/>
                 <div className="flex flex-col gap-10 pb-10 pt-5 border-b-2">
-                    <h1 className="font-bold text-3xl">Adventures</h1>
+                    <h1 className="font-bold text-3xl">More Article</h1>
                     <div className="grid grid-cols-4">
                         <div className="col-span-3 grid grid-cols-3 gap-10">
                             {
@@ -34,6 +35,7 @@ export default function MainLayoutThree({ news, params }: { news: News[], params
                 </div>
                 <MoreNewsContainer news={news} params={params} startIndex={15} />
             </div>
+            <MainLayoutSMMD news={news} params={params} />
             <div className="border-y-2 h-10">
 
             </div>

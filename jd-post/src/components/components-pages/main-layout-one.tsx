@@ -6,11 +6,12 @@ import CardTitle from "../cards/card-title";
 import TwoCardArticleImageContainer from "../container/two-card-article-image-container";
 import FourCardArticleCountainer from "../container/four-card-article-container";
 import OneCardTopArticleContainer from "../container/one-card-top-article-container";
+import MainLayoutSMMD from "./main-layout-sm-md";
 
 export default function MainLayoutOne({ news, params }: { news: News[], params: string }) {
     return (
         <div>
-            <div className="container mx-auto">
+            <div className="container mx-auto hidden lg:block">
                 {
                     params !== "home" && (
                         <h1 className="my-5 border-b-2 text-5xl font-bold text-red-600">{params.toUpperCase()}</h1>
@@ -47,6 +48,7 @@ export default function MainLayoutOne({ news, params }: { news: News[], params: 
                 <OneCardTopArticleContainer news={news[15]} />
                 <MoreNewsContainer news={news} params={params} startIndex={16} />
             </div>
+            <MainLayoutSMMD news={news} params={params} />
             <div className="border-y-2 h-10">
 
             </div>
