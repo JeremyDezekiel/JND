@@ -13,7 +13,6 @@ A modern, responsive news portal built with [Next.js](https://nextjs.org/), fetc
 - [Environment Variables](#environment-variables)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [Screenshots](#screenshots)
 - [Contributing](#contributing)
 - [License](#license)
 
