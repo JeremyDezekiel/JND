@@ -64,7 +64,7 @@ jd-post/
 ### 1. Clone the repository
 
 ```sh
-git clone https://github.com/yourusername/jd-post.git
+git clone https://github.com/jeremydezekiel/jd-post.git
 cd jd-post
 ```
 
